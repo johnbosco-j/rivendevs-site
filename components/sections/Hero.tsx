@@ -97,12 +97,16 @@ export function Hero() {
             className="flex flex-col items-center text-center [transform-style:preserve-3d]"
           >
             <div style={{ transform: "translateZ(90px)" }}>
-              <Wordmark className="text-[40px] leading-none text-ink md:text-[52px]" />
+              <span className="hero-in inline-block">
+                <Wordmark className="text-[40px] leading-none text-ink md:text-[52px]" />
+              </span>
             </div>
             <h1 id="hero-title" className="mt-8 max-w-[14ch] text-hero font-semibold" style={{ transform: "translateZ(45px)" }}>
-              <AccentText heading={hero.headline} glow />
+              <span className="hero-in inline-block" style={{ ["--i" as string]: 1 }}>
+                <AccentText heading={hero.headline} glow />
+              </span>
             </h1>
-            <p className="mt-8 max-w-[36rem] font-modern text-[18px] font-light leading-[1.55] tracking-[-0.01em] text-ink/80 md:text-[21px]">
+            <p className="hero-in mt-8 max-w-[36rem] font-modern text-[18px] font-light leading-[1.55] tracking-[-0.01em] text-ink/80 md:text-[21px]" style={{ ["--i" as string]: 2 }}>
               {hero.sub}
             </p>
             {askMotion && (

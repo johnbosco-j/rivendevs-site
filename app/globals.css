@@ -306,3 +306,10 @@
 @media (hover: none) {
   .card-hover:active, .spotlight:active { transform: scale(0.985); }
 }
+
+/* Hero entrance on first load: wordmark, headline, then the intro.
+   Delays stay short so the headline (the LCP element) paints almost immediately. */
+@keyframes hero-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in { animation: hero-in 620ms var(--ease-out) both; animation-delay: calc(var(--i, 0) * 90ms); }
+}
