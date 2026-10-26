@@ -11,11 +11,17 @@ const SITE_HOST = new URL(SITE_URL).host.replace(/^www\./, "");
  */
 export const CLAREO_URL = env(process.env.NEXT_PUBLIC_CLAREO_URL) ?? `https://clareo.${SITE_HOST}`;
 
+/** Where WallLoop's product page lives. Default wallloop.rivendevs.in; override with NEXT_PUBLIC_WALLLOOP_URL. */
+export const WALLLOOP_URL = env(process.env.NEXT_PUBLIC_WALLLOOP_URL) ?? `https://wallloop.${SITE_HOST}`;
+
 export const LINKS = {
   /** Short link on the Riven site; next.config.ts redirects /clareo → CLAREO_URL. */
   clareo: "/clareo",
   /** Shown in the product card's browser bar. */
   clareoDisplay: CLAREO_URL.replace(/^https?:\/\//, ""),
+  /** Short link on the Riven site; next.config.ts redirects /wallloop → WALLLOOP_URL. */
+  wallloop: "/wallloop",
+  wallloopDisplay: WALLLOOP_URL.replace(/^https?:\/\//, ""),
   /** Founder portfolio. Undefined until NEXT_PUBLIC_PORTFOLIO_URL is set. */
   portfolio: env(process.env.NEXT_PUBLIC_PORTFOLIO_URL),
   github: "https://github.com/johnbosco-j",
@@ -30,7 +36,7 @@ export const site = {
   founded: 2026,
   title: "Riven — Clear technology for the real world",
   description:
-    "Riven is a Chennai-based technology company building across AI, robotics, health, developer tools and education. Makers of Clareo. We also build full-stack websites and AI solutions for clients at a minimal, optimal cost.",
+    "Riven is a Chennai-based technology company building across AI, robotics, health, developer tools and education. Makers of Clareo and WallLoop. We also build full-stack websites and AI solutions for clients at a minimal, optimal cost.",
   mission: "Clear technology for the real world.",
 
   nav: [
@@ -81,7 +87,7 @@ export const site = {
   contact: {
     label: "Contact",
     heading: { before: "Let’s build something", accent: "clear", after: "." },
-    intro: "A project you need built, a partnership, hiring, or feedback on Clareo — tell us and we’ll reply.",
+    intro: "A project you need built, a partnership, hiring, or feedback on Clareo or WallLoop — tell us and we’ll reply.",
     topics: ["Project enquiry", "Partnership", "Hiring", "Product feedback", "Press", "Other"],
     success: "Thanks — your message is in. We’ll get back to you soon.",
     emailLabel: "Or write to",
@@ -98,7 +104,13 @@ export const site = {
           { label: "Founder", href: "#founder" },
         ],
       },
-      { title: "Products", links: [{ label: "Clareo", href: "clareo" }] },
+      {
+        title: "Products",
+        links: [
+          { label: "Clareo", href: "clareo" },
+          { label: "WallLoop", href: "wallloop" },
+        ],
+      },
       {
         title: "Connect",
         links: [

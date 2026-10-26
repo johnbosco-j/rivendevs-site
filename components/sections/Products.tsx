@@ -20,7 +20,8 @@ export function Products() {
         <div className="mt-14 md:mt-20">{featured && <ProductCard product={featured} />}</div>
 
         {others.length > 0 && (
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          // Product cards are full-width panels; stack them rather than squeezing two per row.
+          <div className="mt-6 grid gap-6">
             {others.map((p) => (
               <ProductCard key={p.slug} product={p} />
             ))}

@@ -21,14 +21,45 @@ export type Product = {
   /** Address shown in the card's browser frame. */
   displayUrl?: string;
   cta: string;
-  /** Optional real screenshot in /public. Without it a coded dashboard mock renders. */
+  /** Optional real screenshot in /public. Without it the coded mock named by `mock` renders. */
   screenshot?: { src: string; width: number; height: number; alt: string };
+  /** Coded stand-in shown until a real screenshot exists. Neutral greys only on Riven pages. */
+  mock: "clareo" | "wallloop";
   disclaimer?: string;
   featured?: boolean;
 };
 
 // Newest first. The first product with `featured: true` gets the large card.
 export const products: Product[] = [
+  {
+    slug: "wallloop",
+    name: "WallLoop",
+    status: "Beta",
+    platforms: "macOS 14+",
+    domains: [],
+    domainLabel: "Desktop · macOS",
+    tagline: "Your videos, alive on the desktop.",
+    description:
+      "WallLoop turns your own videos into a live, looping wallpaper on every Mac display — muted, hardware-decoded and quiet, living in the menu bar.",
+    features: [
+      "Plays MP4, MOV and M4V from folders you choose, on every display and every Space.",
+      "Shuffle or in order, every 5 minutes to daily, with favorites and global shortcuts.",
+      "Pauses itself on battery, in Low Power Mode, behind full-screen apps and when locked.",
+      "Your lock screen shows a still from the video that was playing.",
+      "No accounts, no tracking: your videos never leave your Mac. Free and open source.",
+    ],
+    stats: [
+      { value: "~1.8%", label: "CPU while playing one video on one display", accent: true },
+      { value: "0 bytes", label: "of your videos uploaded, ever" },
+      { value: "6", label: "automatic pause triggers, from battery to the lock screen" },
+    ],
+    statsSource: "CPU: Activity Monitor, one H.264 video on a 1710×1112 display, Apple silicon MacBook, October 2026.",
+    href: LINKS.wallloop,
+    displayUrl: LINKS.wallloopDisplay,
+    cta: "Visit WallLoop",
+    mock: "wallloop",
+    disclaimer: "Preview build: not yet notarized by Apple.",
+  },
   {
     slug: "clareo",
     name: "Clareo",
@@ -56,6 +87,7 @@ export const products: Product[] = [
     href: LINKS.clareo,
     displayUrl: LINKS.clareoDisplay,
     cta: "Visit Clareo",
+    mock: "clareo",
     // screenshot: { src: "/products/clareo/dashboard.png", width: 1600, height: 1000, alt: "Clareo dashboard showing blink rate, fatigue score and weekly trends" },
     disclaimer: "Clareo is a wellness tool, not a medical device.",
     featured: true,

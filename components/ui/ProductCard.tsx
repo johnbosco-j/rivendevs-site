@@ -10,6 +10,7 @@ import { Button } from "./Button";
 import { Chip } from "./Chip";
 import { ClareoMock } from "./ClareoMock";
 import { Stat } from "./Stat";
+import { WallLoopMock } from "./WallLoopMock";
 
 /** Featured product panel. Rises from the foreground layer (L3): scale 0.92 → 1. */
 export function ProductCard({ product }: { product: Product }) {
@@ -82,8 +83,12 @@ export function ProductCard({ product }: { product: Product }) {
                     />
                   ) : (
                     <>
-                      <ClareoMock />
-                      <span className="sr-only">Illustration of the {product.name} dashboard.</span>
+                      {product.mock === "wallloop" ? <WallLoopMock /> : <ClareoMock />}
+                      <span className="sr-only">
+                        {product.mock === "wallloop"
+                          ? `Illustration of the ${product.name} menu bar controls over a live wallpaper.`
+                          : `Illustration of the ${product.name} dashboard.`}
+                      </span>
                     </>
                   )}
                 </div>

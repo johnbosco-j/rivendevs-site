@@ -25,6 +25,7 @@ npm run dev                  # http://localhost:3000
 | Variable | Default | Effect |
 |---|---|---|
 | `NEXT_PUBLIC_CLAREO_URL` | `https://clareo.<site domain>` | Where Clareo lives. "Visit Clareo" and the footer link go to `/clareo` on the Riven site, which redirects here. |
+| `NEXT_PUBLIC_WALLLOOP_URL` | `https://wallloop.<site domain>` | Where WallLoop's product page lives. "Visit WallLoop" and the footer link go to `/wallloop` on the Riven site, which redirects here. |
 | `NEXT_PUBLIC_PORTFOLIO_URL` | unset | Founder portfolio. While unset, the button reads "Portfolio — coming soon" and can't be clicked. |
 | `NEXT_PUBLIC_SITE_URL` | `https://rivendevs.in` | Canonical URL for metadata, sitemap and JSON-LD. |
 | `RESEND_API_KEY`, `CONTACT_TO_EMAIL` | unset | When both are set, contact messages are emailed through Resend. Otherwise they are only logged on the server. |
@@ -39,6 +40,7 @@ Buy one domain (for example `rivendevs.in`). Then:
 1. **Riven site:** in the Vercel project for this repo, add `rivendevs.in` and `www.rivendevs.in`, and set `NEXT_PUBLIC_SITE_URL=https://rivendevs.in`.
 2. **Clareo:** in Clareo's own Vercel project (or wherever the Clareo app is hosted), add `clareo.rivendevs.in`. At your registrar, point `clareo` to it with a CNAME record, following the value Vercel shows.
 3. The "Visit Clareo" button goes to `rivendevs.in/clareo`, which redirects to `https://clareo.rivendevs.in`. Nothing else needs changing.
+4. **WallLoop:** deploy the `site/` folder of the WallLoop repo as its own Vercel project, add `wallloop.rivendevs.in` to it and point a `wallloop` CNAME at it. "Visit WallLoop" goes to `rivendevs.in/wallloop`, which redirects there.
 
 ## Deploy (Vercel)
 
@@ -58,7 +60,7 @@ components/
   about/        RobotStage — Riv, the interactive 3D mascot console (HUD, speech bubble; lazy-loads three.js + model)
   sections/     Hero (+ Orbit), About (who we are / why we're different, synced with Riv), Domains (pinned horizon), Products,
                 Services, Process, Founder, Contact (+ ContactForm), Footer
-  ui/           Button, Chip, Stat, DomainTile, ProductCard, ClareoMock, FounderCard, Icon
+  ui/           Button, Chip, Stat, DomainTile, ProductCard, ClareoMock, WallLoopMock, FounderCard, Icon
   brand/        Wordmark (orbiting dot on the second "o"), Monogram
 content/        site.ts · about.ts · domains.ts · products.ts · services.ts · founder.ts   ← all copy and links
 ```
@@ -90,7 +92,8 @@ content/        site.ts · about.ts · domains.ts · products.ts · services.ts 
 | Clareo dashboard screenshot (currently a coded mock) | `public/products/clareo/dashboard.png`, then uncomment `screenshot` in `content/products.ts` |
 | Founder photo (optional; the "JE" monogram shows until then) | `public/founder.jpg` + `photo` in `content/founder.ts` |
 | Clareo address (only if not `clareo.<site domain>`) | `NEXT_PUBLIC_CLAREO_URL` |
-| Founder portfolio URL | `NEXT_PUBLIC_PORTFOLIO_URL` |
+| Founder portfolio URL | `NEXT_PUBLIC_WALLLOOP_URL` | `https://wallloop.<site domain>` | Where WallLoop's product page lives. "Visit WallLoop" and the footer link go to `/wallloop` on the Riven site, which redirects here. |
+| `NEXT_PUBLIC_PORTFOLIO_URL` |
 | Company email (defaults to `hello@<site domain>`) | `LINKS.contactEmail` in `content/site.ts` |
 | Site domain | `NEXT_PUBLIC_SITE_URL` |
 | Clareo benchmark numbers | `content/products.ts` → `stats`. Update from Clareo's `docs/DETECTION_ENGINE.md`. |
