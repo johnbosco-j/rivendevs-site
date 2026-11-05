@@ -52,7 +52,7 @@ export function ProductCard({ product }: { product: Product }) {
           </ul>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Button href={product.href} external comingSoonLabel={`${product.cta} — site coming soon`}>
+            <Button href={product.href} external={!product.internal} comingSoonLabel={`${product.cta} — site coming soon`}>
               {product.cta}
             </Button>
           </div>
@@ -79,7 +79,7 @@ export function ProductCard({ product }: { product: Product }) {
                       height={product.screenshot.height}
                       alt={product.screenshot.alt}
                       sizes="(min-width: 1024px) 560px, 100vw"
-                      className="size-full object-cover object-top"
+                      className="size-full object-cover object-left-top"
                     />
                   ) : (
                     <>

@@ -40,10 +40,10 @@ export const site = {
   mission: "Clear technology for the real world.",
 
   nav: [
-    { label: "Domains", href: "#domains" },
     { label: "Products", href: "#products" },
+    { label: "Milestones", href: "#milestones" },
     { label: "Services", href: "#services" },
-    { label: "Founder", href: "#founder" },
+    { label: "Team", href: "#team" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   navCta: { label: "Get in touch", href: "#contact" },
@@ -87,7 +87,7 @@ export const site = {
   contact: {
     label: "Contact",
     heading: { before: "Let’s build something", accent: "clear", after: "." },
-    intro: "A project you need built, a partnership, hiring, or feedback on Clareo or WallLoop — tell us and we’ll reply.",
+    intro: "A project you need built, a partnership, hiring, or feedback on Riven TV, Clareo or WallLoop — tell us and we’ll reply.",
     topics: ["Project enquiry", "Partnership", "Hiring", "Product feedback", "Press", "Other"],
     success: "Thanks — your message is in. We’ll get back to you soon.",
     emailLabel: "Or write to",
@@ -102,12 +102,14 @@ export const site = {
           { label: "Domains", href: "#domains" },
           { label: "Services", href: "#services" },
           { label: "Founder", href: "#founder" },
+          { label: "Team", href: "#team" },
+          { label: "Milestones", href: "#milestones" },
         ],
       },
       {
         title: "Products",
         links: [
-          { label: "Riven TV", href: "https://github.com/johnbosco-j/riven-tv" },
+          { label: "Riven TV", href: "/tv" },
           { label: "Clareo", href: "clareo" },
           { label: "WallLoop", href: "wallloop" },
         ],

@@ -18,6 +18,8 @@ export type Product = {
   statsSource?: string;
   /** Product link (external or a redirecting short link). Undefined → CTA shows "coming soon". */
   href?: string;
+  /** True when href is a page on this site (opens in the same tab, no ↗). */
+  internal?: boolean;
   /** Address shown in the card's browser frame. */
   displayUrl?: string;
   cta: string;
@@ -49,13 +51,14 @@ export const products: Product[] = [
       "Free and open source (MIT), with a reversible ADB setup and debloat script.",
     ],
     stats: [
-      { value: "93 → 27 ms", label: "median frame time on an Android 8 emulator", accent: true },
+      { value: "93 → 27 ms", label: "median frame time, best run (53 ms under heavy load)", accent: true },
       { value: "0", label: "ads, sponsored rows or trackers" },
       { value: "2.5 MB", label: "APK, runs on Android TV 8 and newer" },
     ],
     statsSource: "Frame times: dumpsys gfxinfo, software-GPU Android 8 emulator, November 2026.",
-    href: "https://github.com/johnbosco-j/riven-tv",
-    displayUrl: "github.com/johnbosco-j/riven-tv",
+    href: "/products/riven-tv",
+    internal: true,
+    displayUrl: "rivendevs-site.vercel.app/tv",
     cta: "Get Riven TV",
     screenshot: { src: "/products/riven-tv/home.jpg", width: 1600, height: 900, alt: "Riven TV home screen with clock, the focused app's name and a frosted dock of apps" },
     mock: "none",

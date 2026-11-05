@@ -20,6 +20,14 @@ const config: Config = {
           tint: "rgb(255 106 26 / 0.08)",
         },
         amber: "#FFB02E",
+        // Riven TV keeps its own identity on its product page (night blue, glass), like Clareo does.
+        tv: {
+          night: "#05070F",
+          deep: "#0B1433",
+          blue: "#3A5BC7",
+          violet: "#5B4BFF",
+          teal: "#13C4A3",
+        },
         success: "#3DDC97",
         danger: "#FF4D4D",
       },
@@ -28,6 +36,8 @@ const config: Config = {
         serif: ["var(--font-serif)", "Georgia", "serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
         modern: ["var(--font-modern)", "var(--font-sans)", "system-ui", "sans-serif"],
+        tvdisplay: ["var(--font-tv-display)", "var(--font-sans)", "system-ui", "sans-serif"],
+        tvtext: ["var(--font-tv-text)", "var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
         hero: ["clamp(56px, 9vw, 132px)", { lineHeight: "0.95", letterSpacing: "-0.035em" }],

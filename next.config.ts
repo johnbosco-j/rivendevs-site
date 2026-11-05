@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/clareo", destination: CLAREO_URL, permanent: false },
       { source: "/wallloop", destination: WALLLOOP_URL, permanent: false },
+      // Riven TV's page lives on this site; /tv is the short link to share.
+      { source: "/tv", destination: "/products/riven-tv", permanent: false },
     ];
   },
 };

@@ -5,9 +5,11 @@ import { Domains } from "@/components/sections/Domains";
 import { Footer } from "@/components/sections/Footer";
 import { Founder } from "@/components/sections/Founder";
 import { Hero } from "@/components/sections/Hero";
+import { Milestones } from "@/components/sections/Milestones";
 import { Process } from "@/components/sections/Process";
 import { Products } from "@/components/sections/Products";
 import { Services } from "@/components/sections/Services";
+import { Team } from "@/components/sections/Team";
 
 export default function Home() {
   return (
@@ -18,9 +20,11 @@ export default function Home() {
         <About />
         <Domains />
         <Products />
+        <Milestones />
         <Services />
         <Process />
         <Founder />
+        <Team />
         <Contact />
       </main>
       <Footer />
