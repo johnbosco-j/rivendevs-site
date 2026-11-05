@@ -28,6 +28,15 @@ export const founder: Founder = {
     "Full-stack developer working across web platforms, real-time APIs, computer vision and systems programming.",
   highlights: [
     {
+      text: "1st prize, IT Engineering, PALS Think2Impact 2026 at IIT Madras — team RivenDevs built SAFER (₹5,000).",
+      strong: ["1st prize, IT Engineering, PALS Think2Impact 2026"],
+    },
+    {
+      text: "1st prize in the PALS quiz at IIT Madras with Bharanidharan, representing LICET (₹2,000).",
+      strong: ["1st prize in the PALS quiz"],
+    },
+    { text: "Student leader at LICET.", strong: ["Student leader"] },
+    {
       text: "Clareo began as EyeGuard, a real-time fatigue-detection API that placed 7th at Ctrl Alt Hack 2.0.",
       strong: ["EyeGuard", "7th at Ctrl Alt Hack 2.0"],
     },

@@ -24,13 +24,42 @@ export type Product = {
   /** Optional real screenshot in /public. Without it the coded mock named by `mock` renders. */
   screenshot?: { src: string; width: number; height: number; alt: string };
   /** Coded stand-in shown until a real screenshot exists. Neutral greys only on Riven pages. */
-  mock: "clareo" | "wallloop";
+  mock: "clareo" | "wallloop" | "none";
   disclaimer?: string;
   featured?: boolean;
 };
 
 // Newest first. The first product with `featured: true` gets the large card.
 export const products: Product[] = [
+  {
+    slug: "riven-tv",
+    name: "Riven TV",
+    status: "Beta",
+    platforms: "Android TV 8+ · Google TV",
+    domains: [],
+    domainLabel: "Home entertainment · Android",
+    tagline: "A calm home screen for your TV.",
+    description:
+      "Riven TV replaces the ad-filled TV home screen with a quiet one: your apps in full colour, a frosted dock, and Riven's own screens for Wi-Fi, Bluetooth, sound and display. Built to run smoothly on older TVs.",
+    features: [
+      "No ads or sponsored rows; every installed app in your own order.",
+      "Riven Settings: Wi-Fi, Bluetooth, inputs, sound, display, storage and more.",
+      "Remote buttons mapped: Source, Menu, Info, Guide, 0–9 and four colour keys.",
+      "Effects levels for older chips; one cached background layer instead of seven.",
+      "Free and open source (MIT), with a reversible ADB setup and debloat script.",
+    ],
+    stats: [
+      { value: "93 → 27 ms", label: "median frame time on an Android 8 emulator", accent: true },
+      { value: "0", label: "ads, sponsored rows or trackers" },
+      { value: "2.5 MB", label: "APK, runs on Android TV 8 and newer" },
+    ],
+    statsSource: "Frame times: dumpsys gfxinfo, software-GPU Android 8 emulator, November 2026.",
+    href: "https://github.com/johnbosco-j/riven-tv",
+    displayUrl: "github.com/johnbosco-j/riven-tv",
+    cta: "Get Riven TV",
+    screenshot: { src: "/products/riven-tv/home.jpg", width: 1600, height: 900, alt: "Riven TV home screen with clock, the focused app's name and a frosted dock of apps" },
+    mock: "none",
+  },
   {
     slug: "wallloop",
     name: "WallLoop",

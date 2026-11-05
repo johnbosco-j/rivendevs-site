@@ -36,7 +36,7 @@ export const site = {
   founded: 2026,
   title: "Riven — Clear technology for the real world",
   description:
-    "Riven is a Chennai-based technology company building across AI, robotics, health, developer tools and education. Makers of Clareo and WallLoop. We also build full-stack websites and AI solutions for clients at a minimal, optimal cost.",
+    "Riven is a Chennai-based technology company building across AI, robotics, health, developer tools and education. Makers of Riven TV, Clareo and WallLoop. We also build full-stack websites and AI solutions for clients at a minimal, optimal cost.",
   mission: "Clear technology for the real world.",
 
   nav: [
@@ -107,6 +107,7 @@ export const site = {
       {
         title: "Products",
         links: [
+          { label: "Riven TV", href: "https://github.com/johnbosco-j/riven-tv" },
           { label: "Clareo", href: "clareo" },
           { label: "WallLoop", href: "wallloop" },
         ],
